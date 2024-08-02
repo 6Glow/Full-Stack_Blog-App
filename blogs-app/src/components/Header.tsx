@@ -15,7 +15,7 @@ const Header = () => {
           </Link>
         </li>
         <li>
-          <Link href='/api/auth/singing'
+          <Link href='/api/auth/signin '
           className="text-white hover:underline">
             Login
           </Link>

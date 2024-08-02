@@ -1,6 +1,7 @@
 "use client";
 
 import { FormData } from "@/types/blog";
+import { useSession } from "next-auth/react";
 import { ChangeEvent, FormEvent, useState } from "react";
 import ReactTextareaAutosize from "react-textarea-autosize";
 
@@ -12,6 +13,8 @@ const FormNewPost = () => {
     title: '',
     content: '',
   });
+  const { data } = useSession();
+  console.log(data?.user);
 
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
