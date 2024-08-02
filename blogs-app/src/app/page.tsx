@@ -1,4 +1,4 @@
-import FormNewPost from "@/components/from-nem-post";
+import FormNewPost from "@/components/fromNemPost";
 
 
 export default function Home() {
