@@ -1,7 +1,8 @@
 import Comments from "@/components/comments";
 import FormComment from "@/components/formComment";
+import prisma from "@/lib/db";
 
-const BlogDetailPage = () => {
+const BlogDetailPage =  () => {
   return (
     <div className="max-w-4-xl mx-auto py-8">
       <h1 className="text-3xl font-bold">Post one</h1>
