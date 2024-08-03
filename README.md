@@ -3,7 +3,6 @@
 This is a Full-Stack Blog App project developed using Next.js and Prisma. The application allows users to create posts and add comments to them. Users can register using Google, and only registered users can create posts and leave comments.
 
 
-
 ## Features
 
 - **Create Posts**: Registered users can create new posts.
@@ -22,3 +21,60 @@ This is a Full-Stack Blog App project developed using Next.js and Prisma. The ap
 - [React](https://reactjs.org/) - A library for building user interfaces.
 - [Tailwind CSS](https://tailwindcss.com/) - A utility-first CSS framework for rapid UI development.
 - [TypeScript](https://www.typescriptlang.org/) - A programming language that extends JavaScript.
+
+
+## Installation
+
+1. **Clone the repository:**
+    ```sh
+    git clone https://github.com/6Glow/Full-Stack_Blog-App.git
+    cd blogs-app
+    ```
+
+2. **Install dependencies:**
+    ```sh
+    npm install
+    ```
+
+3. **Set up environment variables:**
+    - Create a `.env` file in the root directory and add the necessary environment variables as shown below:
+      ```env
+      DATABASE_URL=your-database-url
+      GOOGLE_CLIENT_ID=your-google-client-id
+      GOOGLE_CLIENT_SECRET=your-google-client-secret
+      ```
+    - Replace `your-database-url`, `your-google-client-id`, and `your-google-client-secret` with the appropriate values.
+
+4. **Run the development server:**
+    ```sh
+    npm run dev
+    ```
+
+5. **Prisma setup:**
+    - Run Prisma migrations to set up the database schema:
+      ```sh
+      npx prisma migrate dev
+      ```
+    - Generate Prisma client:
+      ```sh
+      npx prisma generate
+      ```
+    - If needed, sync your Prisma schema with the database without migrations:
+      ```sh
+      npx prisma db push
+      ```
+    - To open Prisma Studio for visual editing of the database:
+      ```sh
+      npx prisma studio
+
+## Usage
+
+- **Starting the app:**
+    ```sh
+    npm run dev
+    ```
+- Open your browser and navigate to `http://localhost:3000`
+
+
+
+
