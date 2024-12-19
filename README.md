@@ -54,7 +54,7 @@ NEXTAUTH_URL="http://localhost:3000"
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/6Glow/Full-Stack_Blog-App
+git clone https://github.com/6Glow/Full-Stack_Blog-App.git
 cd blog-app
 ```
 
