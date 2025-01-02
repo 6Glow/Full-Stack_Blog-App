@@ -73,3 +73,7 @@ logs/
 dist/
 build/
 
+<<<<<<< HEAD
+=======
+.gitignore
+>>>>>>> 36594889bc70faee0ea1a7f174e92d892bab462e
