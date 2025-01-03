@@ -7,7 +7,6 @@ A modern, feature-rich blogging platform built with Next.js 14, TypeScript, Pris
 - 🔐 **Authentication** - Secure Google OAuth authentication
 - ✍️ **Blog Posts** - Create and read blog posts
 - 💬 **Comments** - Interactive commenting system on blog posts
-- 👤 **User Profiles** - Personalized user experience
 - 🎨 **Modern UI** - Clean and responsive design with Tailwind CSS
 - 🔒 **Database** - Persistent storage with PostgreSQL
 - 🚀 **Performance** - Server-side rendering with Next.js 14
