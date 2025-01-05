@@ -1,4 +1,4 @@
-export const posts  = [
+export const posts = [
   {
     id: 1,
     title: 'Blog Post 1',
@@ -35,4 +35,4 @@ export const posts  = [
     content: 'Delicious recipes for a healthy lifestyle.',
     username: 'chef_gordon',
   },
-];
+] as const;

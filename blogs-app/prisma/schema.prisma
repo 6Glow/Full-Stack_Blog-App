@@ -47,6 +47,7 @@ model User {
   sessions      Session[]
   posts         Post[]
   comments      Comment[]
+  likes         Like[]
 }
 
 model VerificationToken {
@@ -65,15 +66,27 @@ model Post {
   authorEmail String?
   createdAt   DateTime  @default(now())
   comments    Comment[]
+  likes       Like[]
 }
 
 model Comment {
+  id          String    @id @default(cuid())
+  text        String
+  createdAt   DateTime  @default(now())
+  author      User?     @relation(fields: [authorEmail], references: [email])
+  authorEmail String?
+  Post        Post?     @relation(fields: [postId], references: [id])
+  postId      String?
+}
+
+model Like {
   id        String   @id @default(cuid())
-  text      String
   createdAt DateTime @default(now())
 
-  author      User?   @relation(fields: [authorEmail], references: [email])
-  authorEmail String?
-  Post        Post?   @relation(fields: [postId], references: [id])
-  postId      String?
+  author      User   @relation(fields: [authorEmail], references: [email], onDelete: Cascade)
+  authorEmail String
+  post        Post   @relation(fields: [postId], references: [id], onDelete: Cascade)
+  postId      String
+
+  @@unique([authorEmail, postId])
 }
