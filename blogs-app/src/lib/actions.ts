@@ -29,7 +29,7 @@ export async function toggleLike(postId: string, userEmail: string) {
       });
     }
 
-    // Обновляем все страницы, где отображаются посты
+   
     revalidatePath('/blogs');
     revalidatePath(`/blogs/${postId}`);
     
