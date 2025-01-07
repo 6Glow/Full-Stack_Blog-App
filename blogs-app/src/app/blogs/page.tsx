@@ -25,6 +25,7 @@ const BlogsPage = async () => {
           >
             <h2 className="text-xl font-bold mb-2">{post.title}</h2>
             <p className="text-gray-600 mb-2">Written by: {post.author?.name}</p>
+            <p className="text-gray-600 mb-2">Content:  {post.content}</p>
             <div className="text-sm text-gray-500">
               {format(new Date(post.createdAt), 'MMM d, yyyy')}
             </div>

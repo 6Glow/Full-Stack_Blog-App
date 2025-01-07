@@ -23,7 +23,7 @@ const LikeButton: FC<LikeButtonProps> = ({
     if (!session?.user) return;
 
     try {
-      const response = await axios.post(`/api/posts/${postId}/like`);
+      const response = await axios.post(`/api/posts/${postId}/`);
       if (response.data.liked) {
         setLikeCount((prev) => prev + 1);
         setIsLiked(true);

@@ -1,6 +1,6 @@
 import Comments from "@/components/comments";
 import FormComment from "@/components/formComment";
-import LikeButton from "@/components/LikeButton";
+import LikeButtonWrapper from "@/components/LikeButtonWrapper";
 import { prisma } from "@/lib/db";
 import { getCurrentUser } from "@/lib/session";
 import { FC } from 'react';
@@ -33,7 +33,7 @@ const BlogDetailPage: FC<BlogDetailPageProps> = async ({ params }) => {
       <div className="mt-4">{post?.content}</div>
       
       <div className="mt-4">
-        <LikeButton 
+        <LikeButtonWrapper
           postId={params.id}
           initialLikeCount={likeCount}
           initialLikedByUser={isLikedByUser}
