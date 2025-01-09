@@ -13,17 +13,17 @@ interface LikeButtonProps {
 const LikeButton: FC<LikeButtonProps> = ({
   postId,
   initialLikeCount,
-  initialLikedByUser,
+  initialLikedByUser ,
 }) => {
   const [likeCount, setLikeCount] = useState(initialLikeCount);
-  const [isLiked, setIsLiked] = useState(initialLikedByUser);
+  const [isLiked, setIsLiked] = useState(initialLikedByUser );
   const { data: session } = useSession();
 
   const handleLike = async () => {
     if (!session?.user) return;
 
     try {
-      const response = await axios.post(`/api/posts/${postId}/`);
+      const response = await axios.post(`/api/likes`, { postId });
       if (response.data.liked) {
         setLikeCount((prev) => prev + 1);
         setIsLiked(true);

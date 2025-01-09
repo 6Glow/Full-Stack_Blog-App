@@ -1,30 +1,19 @@
+import { prisma } from "@/lib/db";
+import { getCurrentUser  } from "@/lib/session";
+import LikeButtonWrapper from "@/components/LikeButtonWrapper";
 import Comments from "@/components/comments";
 import FormComment from "@/components/formComment";
-import LikeButtonWrapper from "@/components/LikeButtonWrapper";
-import { prisma } from "@/lib/db";
-import { getCurrentUser } from "@/lib/session";
 import { FC } from 'react';
 
-interface BlogDetailPageProps {
-  params: {
-    id: string;
-  };
-}
-
-const BlogDetailPage: FC<BlogDetailPageProps> = async ({ params }) => {
-  const user = await getCurrentUser();
+const BlogDetailPage: FC<{ params: { id: string } }> = async ({ params }) => {
+  const user = await getCurrentUser ();
   const post = await prisma.post.findFirst({
-    where: {
-      id: params.id,
-    },
-    include: {
-      author: true,
-      likes: true,
-    },
+    where: { id: params.id },
+    include: { author: true, likes: true },
   });
 
-  const likeCount = post?.likes?.length ?? 0;
-  const isLikedByUser = post?.likes.some(like => like.authorEmail === user?.email) ?? false;
+  const likeCount = post?.likes.length ?? 0;
+  const isLikedByUser  = post?.likes.some(like => like.authorEmail === user?.email) ?? false;
 
   return (
     <div className="max-w-4-xl mx-auto py-8">
@@ -36,7 +25,7 @@ const BlogDetailPage: FC<BlogDetailPageProps> = async ({ params }) => {
         <LikeButtonWrapper
           postId={params.id}
           initialLikeCount={likeCount}
-          initialLikedByUser={isLikedByUser}
+          initialLikedByUser ={isLikedByUser }
         />
       </div>
 
