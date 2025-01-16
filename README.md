@@ -150,7 +150,7 @@ blogs-app/
 ### Comments
 - Add comments to blog posts
 - View all comments on a post
-- Real-time updates
+
 <!---
 ## Contributing
 
