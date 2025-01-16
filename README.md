@@ -7,6 +7,7 @@ A modern, feature-rich blogging platform built with Next.js 14, TypeScript, Pris
 - 🔐 **Authentication** - Secure Google OAuth authentication
 - ✍️ **Blog Posts** - Create and read blog posts
 - 💬 **Comments** - Interactive commenting system on blog posts
+- ❤️ **Likes** - Real-time like/unlike functionality for posts
 - 🎨 **Modern UI** - Clean and responsive design with Tailwind CSS
 - 🔒 **Database** - Persistent storage with PostgreSQL
 - 🚀 **Performance** - Server-side rendering with Next.js 14
@@ -14,11 +15,10 @@ A modern, feature-rich blogging platform built with Next.js 14, TypeScript, Pris
 ## Tech Stack
 
 - **Frontend:**
-  - Next.js 14
-  - React
+  - Next.js 14.2.5
+  - React 18
   - TypeScript
   - Tailwind CSS
-  - NextAuth.js
 
 - **Backend:**
   - Prisma ORM
@@ -26,7 +26,8 @@ A modern, feature-rich blogging platform built with Next.js 14, TypeScript, Pris
   - Next.js API Routes
 
 - **Authentication:**
-  - NextAuth.js
+  - NextAuth.js v4
+  - Prisma Adapter
   - Google OAuth
 
 ## Getting Started
@@ -150,7 +151,7 @@ blogs-app/
 - Add comments to blog posts
 - View all comments on a post
 - Real-time updates
-
+<!---
 ## Contributing
 
 1. Fork the repository
@@ -158,7 +159,7 @@ blogs-app/
 3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
-
+--->
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
