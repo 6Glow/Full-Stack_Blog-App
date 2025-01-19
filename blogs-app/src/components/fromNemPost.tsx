@@ -6,6 +6,7 @@ import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import { ChangeEvent, FormEvent, useState } from 'react';
 import ReactTextareaAutosize from 'react-textarea-autosize';
+import { toast } from 'sonner';
 
 const inputClass =
   'w-full py-2 px-3 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-300';
@@ -32,14 +33,29 @@ const FormNewPost = () => {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    try {
-      const response = await axios.post('api/posts', formData);
+    // Валидация входных данных
+    if (!formData.title.trim() || !formData.content.trim()) {
+      toast.error('Title and content are required');
+      return;
+    }
 
-      if (response.status === 200) {
-        router.push(`/blogs/${response.data.newPost.id}`);
+    try {
+      const response = await axios.post('/api/blogs', formData, {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+
+      if (response.status === 201) {
+        toast.success('Post created successfully!');
+        // Перенаправление на страницу со всеми блогами
+        router.push('/blogs');
+      } else {
+        toast.error('Failed to create post');
       }
     } catch (error) {
-      console.error(error);
+      console.error('Post creation error:', error);
+      toast.error('An unexpected error occurred');
     }
   };
 
@@ -53,6 +69,7 @@ const FormNewPost = () => {
           name='title'
           value={formData.title}
           onChange={handleChange}
+          required
         />
       </div>
       <div className='mb-4'>
@@ -63,6 +80,7 @@ const FormNewPost = () => {
           placeholder='Enter the content'
           value={formData.content}
           onChange={handleChange}
+          required
         />
       </div>
       <button
