@@ -168,4 +168,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - Next.js team for the amazing framework
 - Prisma team for the excellent ORM
-- All contributors and users of this project
+
